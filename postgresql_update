@@ -1,0 +1,15 @@
+The below listed commands to update PostgreSQL cluster 9.5 to 10 with a short downtime. DB size is about 300 GB 
+time pg_upgradecluster 9.5 main /var/lib/postgresql/10/main --old-bindir /usr/lib/postgresql/9.5/bin/ --no-start -j 16 -k -m upgrade
+ 
+real    9m43.558s
+user    1m38.347s
+sys    2m21.024s
+ 
+time /usr/lib/postgresql/10/bin/vacuumdb --all -j 10 --analyze-in-stages
+ 
+real    8m34.948s
+user    0m0.291s
+sys    0m0.263s
+
+
+jdbc-driver updated to 42.2.5 for confluence. the latest built-in driver (9.4-1202 https://confluence.atlassian.com/doc/database-jdbc-drivers-171742.html) doesn't work with postgresql 10
