@@ -13,3 +13,6 @@ sys    0m0.263s
 
 
 jdbc-driver updated to 42.2.5 for confluence. the latest built-in driver (9.4-1202 https://confluence.atlassian.com/doc/database-jdbc-drivers-171742.html) doesn't work with postgresql 10
+
+
+The same is working for updating 10 -> 11 versions
