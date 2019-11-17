@@ -1,0 +1,10 @@
+### Downgrade 18.04 to 16.04 after fail upgade:
+
+1) re-check versions of linux-image and linux-headers, then reinstall the main pkgs for OS 
+1.1) check versions here: https://packages.ubuntu.com/search?suite=disco&section=all&arch=any&keywords=SOME_PKG&searchon=names
+1.2) fix versions in this line and apply command: `apt install libmount1=2.27.1-6ubuntu3.9 init=1.29ubuntu4 initscripts=2.88dsf-59.3ubuntu2 sysvinit-utils=2.88dsf-59.3ubuntu2 systemd-sysv=229-4ubuntu21.22 mount=2.27.1-6ubuntu3.9 systemd=229-4ubuntu21.22 libsystemd0=229-4ubuntu21.22 util-linux=2.27.1-6ubuntu3.9 libfdisk1=2.27.1-6ubuntu3.9 initramfs-tools=0.122ubuntu8.16 initramfs-tools-core=0.122ubuntu8.16 libpam-systemd=229-4ubuntu21.22 initramfs-tools-bin=0.122ubuntu8.16 udev=229-4ubuntu21.22 libudev1=229-4ubuntu21.22 libsystemd0=229-4ubuntu21.22 libudev1=229-4ubuntu21.22 mount=2.27.1-6ubuntu3.9 sysvinit-utils=2.88dsf-59.3ubuntu2`
+2) remove libssl1.1 with all dependencies
+  2.1) `apt remove libssl1.1`
+  2.2) then purge it `apt purge libssl1.1`
+  2.3) and re-install needed soft that was removed on 2.1st step
+  
